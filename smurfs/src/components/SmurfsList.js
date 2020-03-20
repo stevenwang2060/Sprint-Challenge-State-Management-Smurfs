@@ -26,12 +26,4 @@ const SmurfsList = props => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        isLoading: state.isLoading,
-        smurfs: state.smurfs,
-        error: state.error
-    }
-}
-
-export default connect(mapStateToProps, { fetchSmurfs })(SmurfsList);
+export default connect(state => state, { fetchSmurfs })(SmurfsList);
